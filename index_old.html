@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="avaanaApp" class="no-js">
+<!--<![endif]-->
+<script type="text/javascript">
+    version = Math.floor(Math.random() * 100)
+</script>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title ng-bind="ngMeta.title">Avaana: Book health, fitness and wellbeing online 24/7</title>
+    <base href="/">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="{{ngMeta.description}}">
+    <meta property="og:description" content="Avaana is Australia's fastest growing health, fitness and wellness booking community."
+        ng-if="false">
+    <meta name="robots" content="{{ngMeta.robots}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" />
+    <meta name="google-site-verification" content="Yko5oJHDO7wlNcZ6rE6CcUN7ibtjJuJAKmGyZFgtkbg" />
+    <link rel="stylesheet" href="static/bower_components/html5-boilerplate/dist/css/normalize.css">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link rel="stylesheet" href="static/bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="static/calender/fullcalendar.css">
+    <link rel="stylesheet" href="static/app.css?v=1.1.1">
+    <link rel="stylesheet" href="static/css/custom.css?v=1.1.1">
+    <script src="static/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="shortcut icon" type="image/png" href="static/image/favicon.png" />
+    <link rel="canonical" href="{{canonical_tag}}" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css"> -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular.min.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular-animate.min.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular-aria.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.9.7/angular-material.js"></script> -->
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99644740-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-99644740-1');
+    </script>
+    <!-- <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-99644740-1', 'auto');
+    ga('send', 'pageview');
+    </script> -->
+    <!-- End Google Analytics -->
+    <!-- Facebook Pixel Code -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org/",
+        "@type": "WebSite",
+        "name": "Avaana",
+        "url": "https://avaana.com.au"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Avaana",
+        "url": "https://avaana.com.au",
+        "logo": "https://avaana.com.au/static/image/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+61 4 3474 1462",
+            "contactType": "technical support",
+            "areaServed": "AU",
+            "availableLanguage": "English"
+        },
+        "sameAs": [
+            "https://www.facebook.com/avaanawellbeing/",
+            "https://twitter.com/@avaanawellbeing",
+            "https://www.instagram.com/avaanawellbeing/",
+            "https://in.linkedin.com/company/avaana"
+        ]
+    }
+    </script>
+    <script>
+        ! function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window,
+            document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1474704955957435');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1474704955957435&ev=PageView&noscript=1"
+        />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+    <!-- Hotjar Tracking Code for avaana.com.au -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () {
+                (h.hj.q = h.hj.q || []).push(arguments)
+            };
+            h._hjSettings = { hjid: 926772, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script');
+            r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+</head>
+
+<body>
+    <div ui-view="main"></div>
+    <script src="static/js/jquery-3.1.0.min.js"></script>
+    <!-- In production use: -->
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script> -->
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="static/css/style.css?v=1.1.1">
+    <link rel="stylesheet" href="static/css/media_queries.css?v=1.1.1">
+    <link rel="stylesheet" href="static/css/angular_material_style.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+    <link href="static/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="static/css/font-awesome.css">
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/bower_components/slick-carousel/slick/slick.css?v=1.1.2">
+    <!-- End -->
+    <!-- Stripe -->
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <!-- End -->
+    <!-- bootstrap js -->
+    <script src="static/js/bootstrap.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <!-- Bootstrap End -->
+    <!-- Angular Material -->
+    <script src="static/bower_components/angular/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+    <script src="static/bower_components/angular-route/angular-route.js"></script>
+    <script type='text/javascript' src="static/js/ng-infinite-scroll.min.js"></script>
+    <script src="static/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="static/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="static/bower_components/angular-aria/angular-aria.js"></script>
+    <!-- End -->
+    <!-- Slick or Corousel -->
+    <script src="static/bower_components/slick-carousel/slick/slick.js"></script>
+    <script src="static/bower_components/angular-slick/dist/slick.js"></script>
+    <script src="static/bower_components/angular-payments/lib/angular-payments.js"></script>
+    <!-- Slick End -->
+    <!-- Date Pickers -->
+    <link rel="stylesheet" href="static/bower_components/mdPickers/dist/mdPickers.css">
+    <script src="static/bower_components/mdPickers/dist/mdPickers.js"></script>
+    <script src="static/bower_components/moment/min/moment.min.js"></script>
+    <!-- End -->
+    <!-- Full Calendar -->
+    <script src="static/calender/calendar.js"></script>
+    <script src="static/js/fullcalendar.min.js"></script>
+    <script src="static/js/full_calender.js"></script>
+    <script src="static/calender/gcal.js"></script>
+    <script src="https://rawgit.com/angular/bower-material/master/angular-material.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-meta/1.0.2/ngMeta.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.1/modernizr.min.js"></script>
+    <script src="http://cdn.rawgit.com/laurihy/angular-payments/2472bc9befa256780d106a8e53a9dea12b7341ed/lib/angular-payments.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-socialshare/2.3.11/angular-socialshare.min.js"></script>
+    <!-- Full Calender End -->
+    <!-- Main Controller -->
+    <script src="static/app.js?v=1.1.2"></script>
+    <!-- End -->
+    <!-- Charts -->
+    <script src="static/js/highcharts.js"></script>
+    <script src="static/js/exporting.js"></script>
+    <!-- Charts End-->
+    <!-- Controller Start -->
+    <script src="static/controller/appCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/homeCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/providerCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/loginCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/registerCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/listBusinessCtrl_new.js?v=1.1.2"></script>
+    <script src="static/controller/paymentCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/businessDashboardCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/searchResultCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/photo_Ctrl.js?v=1.1.2"></script>
+    <script src="static/controller/mapCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/bookingCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/mapCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/userDashboardCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/blogCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/blogDetailCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/landingpageCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/planpricingCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/ratingCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/accountActivateCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/angular_spinners.js?v=1.1.2"></script>
+    <script src="static/controller/forgotPasswordCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/reviewCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/staffProfileCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/new_AppointmentCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/block_timeCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/update_new_appointmentCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/update_block_timeCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/registrationPopupCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/alertPopUpCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/list_alertpopCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/repeatEventCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/checkoutConfirmCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/welcomePackCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/custom_dailogCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/pay_at_venue_popupCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/editAccountDetailsCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/marketPlaceBookingsCtrl.js?v=1.1.2"></script>
+    <script src="static/controller/add_bank_account_details.js?v=1.1.2"></script>
+    <!-- Controller end -->
+    <!-- Services -->
+    <script src="static/service/authService.js?v=1.1.2"></script>
+    <script src="static/service/commonService.js?v=1.1.2"></script>
+    <!-- Services End-->
+    <link rel="stylesheet" href="static/bower_components/ngImgCrop/compile/unminified/ng-img-crop.css">
+    <script src="static/bower_components/ngImgCrop/compile/unminified/ng-img-crop.js"></script>
+    <script src="static/bower_components/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <link rel="stylesheet" href="static/bower_components/angular-ui-bootstrap/dist/ui-bootstrap-csp.css">
+    <script src="static/components/version/version.js"></script>
+    <script src="static/components/version/version-directive.js"></script>
+    <script src="static/components/version/interpolate-filter.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRcqupP_7qiMMQJPuU-zsUYe8wbvWGIlw&libraries=places" async
+        defer></script>
+    <!-- Spinner Directive -->
+    <div spinner="" name="html5spinner" ng-cloak="" id="Spinner" style="width:100%;height:100%;position:fixed;top:0px;left:0px;z-index:9999;">
+        <div class="overlay"></div>
+        <!-- <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div> -->
+        <img src="static/image/Preloader-3.gif" id="loader_new" alt="">
+        <div class="please-wait"></div>
+    </div>
+    <!-- End -->
+    <script type="text/javascript">
+        var trackcmp_email = '';
+        var trackcmp = document.createElement("script");
+        trackcmp.async = true;
+        trackcmp.type = 'text/javascript';
+        trackcmp.src = '//trackcmp.net/visit?actid=999922178&e=' + encodeURIComponent(trackcmp_email) + '&r=' + encodeURIComponent(document.referrer) + '&u=' + encodeURIComponent(window.location.href);
+        var trackcmp_s = document.getElementsByTagName("script");
+        if (trackcmp_s.length) {
+            trackcmp_s[0].parentNode.appendChild(trackcmp);
+        } else {
+            var trackcmp_h = document.getElementsByTagName("head");
+            trackcmp_h.length && trackcmp_h[0].appendChild(trackcmp);
+        }
+    </script>
+    <!-- LinkedIn Pixel-->
+    <script type="text/javascript">
+        _linkedin_data_partner_id = "89738";
+    </script>
+    <script type="text/javascript">
+        (function () {
+            var s = document.getElementsByTagName("script")[0];
+            var b = document.createElement("script");
+            b.type = "text/javascript";
+            b.async = true;
+            b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+            s.parentNode.insertBefore(b, s);
+        })();
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=89738&fmt=gif" />
+    </noscript>
+    <!-- LinkedIn Pixel End-->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Avaana",
+        "url": "https://avaana.com.au",
+        "logo": "https://avaana.com.au/static/image/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+61 4 3474 1462",
+            "contactType": "technical support",
+            "areaServed": "AU",
+            "availableLanguage": "English"
+        },
+        "sameAs": [
+            "https://www.facebook.com/avaanawellbeing/",
+            "https://twitter.com/@avaanawellbeing",
+            "https://www.instagram.com/avaanawellbeing/",
+            "https://in.linkedin.com/company/avaana"
+        ]
+    }
+    </script>
+    <script type=”application/ld+json”>
+    {“
+        @context”: “http: //schema.org”,
+            “@type”: “WebSite”,
+        “url”: “https: //avaana.com.au”,
+            “potentialAction”: {“
+                @type”: “SearchAction”,
+                “target”: “https: //avaana.com.au/search?q={search_term_string}”,
+                    “query - input”: “required name = search_term_string”
+            }
+    }
+    </script>
+</body>
+
+</html>

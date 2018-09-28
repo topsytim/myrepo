@@ -1,0 +1,56 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+
+*:focus {
+    outline: none;
+}
+
+
+md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+    border-color: rgba(0,189,113,0.87);
+}
+
+
+md-option:focus{
+    /*color: white;*/
+    background-color:rgba(0,189,113,0.87);
+}
+
+md-datepicker-input:{
+  color:#fff;
+}
+
+.md-checkbox-enabled[selected] .md-icon {
+    background-color: #00bd71;
+}
+
+

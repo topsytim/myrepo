@@ -1,0 +1,111 @@
+<html>
+
+<head>
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script>
+        var callbackResponse = (document.URL).split("#")[1];
+        var responseParameters = (callbackResponse).split("&");
+        var parameterMap = [];
+        for (var i = 0; i < responseParameters.length; i++) {
+            parameterMap[responseParameters[i].split("=")[0]] = responseParameters[i].split("=")[1];
+        }
+        if (parameterMap.access_token !== undefined && parameterMap.access_token !== null) {
+            console.log("accessToken: " + parameterMap.access_token);
+            console.log(localStorage.getItem('loginType'));
+            if (localStorage.getItem('loginType') == "google") {
+                localStorage.googleAccessToken = parameterMap.access_token;
+                $.ajax({
+                    url: 'https://www.googleapis.com/plus/v1/people/me',
+                    type: 'get',
+                    dataType: 'json',
+                    headers: {
+                        Authorization: 'Bearer ' + localStorage.googleAccessToken
+                    },
+                    success: function(success) {
+                        console.log("Google: success " + JSON.stringify(success));
+                        email = success.emails[0].value;
+                        id = success.id;
+                        console.log("Google: email: " + email + " id:" + id);
+                        $.ajax({
+                            url: 'http://avaana.com.au/a_login_social_auth/',
+                            type: 'post',
+                            dataType: 'json',
+                            data: {
+                                u_id: id,
+                                email: email,
+                                provider: localStorage.loginType
+                            },
+                            success: function(success) {
+                                console.log("success" + JSON.stringify(success.user_id))
+                                if (success.user_id == "blank") {
+                                    window.location.href = "http://avaana.com.au/#/app/home"
+                                } else {
+                                    window.location.href = "http://avaana.com.au/#/app/home"
+                                }
+                            },
+                            error: function(response) {
+                                console.log("Error" + JSON.stringify(response))
+                            }
+                        });
+                    },
+                    error: function(response) {
+                    }
+                });
+            } else if (localStorage.getItem('loginType') == "facebook") {
+                localStorage.facebookAccessToken = parameterMap.access_token;
+                $.ajax({
+                    url: 'https://graph.facebook.com/v2.5/me?access_token=' + localStorage.facebookAccessToken + '&fields=name,email,gender,birthday,first_name,last_name,picture',
+                    type: 'get',
+                    dataType: 'json',
+                    success: function(success) {
+                        id = success.id;
+                        if(success.email){
+                            email = success.email;
+                        }else{
+                            email = id+"@facebook.com"
+                        }
+                        
+                        
+                        $.ajax({
+                            url: 'http://avaana.com.au/a_login_social_auth/',
+                            // url: 'http://localhost:8000/a_login_social_auth/',
+                            type: 'post',
+                            dataType: 'json',
+                            data: {
+                                u_id: id,
+                                email: email,
+                                first_name:success.first_name,
+                                last_name:success.last_name,
+                                picture:success.picture,
+                                provider: localStorage.getItem('loginType')
+                            },
+                            success: function(success) {
+                                console.log(JSON.stringify(success.data))
+                                localStorage.setItem('socialLogin', JSON.stringify(success))
+                                if (success.user_id == "blank") {
+                                    window.location.href = "http://avaana.com.au/#/app/home"
+                                    // window.location.href = "http://localhost:8000/#/app/home"
+                                } else {
+                                    window.location.href = "http://avaana.com.au/#/app/home"
+                                    // window.location.href = "http://localhost:8000/#/app/home"
+                                }
+                            },
+                            error: function(response) {
+                                console.log(JSON.stringify(response))
+                            }
+                        });
+                    },
+                    error: function(response) {
+                    }
+                });
+            }
+        } else {
+            alert("Problem authenticating");
+        }
+    </script>
+</head>
+<body>Redirecting...
+    <script src="bower_components/angular/angular.js"></script>
+</body>
+
+</html>
